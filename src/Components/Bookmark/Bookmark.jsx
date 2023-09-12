@@ -6,7 +6,7 @@ const Bookmark = ({ bookmarks }) => {
         Bookmarked Blogs :{bookmarks.length}
       </h1>
       {bookmarks.map((bookmark, idx) => (
-        <h1 className="text-xl font-bold bg-base-200 p-5 mb-3" key={idx}>
+        <h1 className="text-lg font-bold bg-base-200 p-5 mb-3" key={idx}>
           {bookmark}
         </h1>
       ))}
