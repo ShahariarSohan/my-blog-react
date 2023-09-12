@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 const ReadingTime = ({ readTime }) => {
   return (
     <div className="bg-slate-200 h-20 rounded-md p-5">
-      <h1 className="text-xl font-bold text-center">
+      <h1 className="text-xl font-bold text-center text-blue-400">
         Spend time on read :{readTime}
       </h1>
     </div>

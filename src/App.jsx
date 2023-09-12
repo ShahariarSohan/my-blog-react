@@ -7,8 +7,10 @@ import Bookmarks from "./Components/Bookmarks/Bookmarks";
 function App() {
   const [bookmarks, setBookmarks] = useState([]);
   const [readTime, setReadTime] = useState(0);
+  // const [removeBookmarks, setRemoveBookMarks] = useState([]);
   const handleBookmark = (bookmark) => setBookmarks([...bookmarks, bookmark]);
   const handleMarkAsRead = (time) => setReadTime(readTime + time);
+
   return (
     <div className="container mx-auto">
       <Header></Header>
