@@ -22,7 +22,7 @@ const Blog = ({ blog, handleBookmark }) => {
         </div>
         <div className="flex justify-center gap-2 items-center">
           <span>Reading Time :{reading_time}</span>
-          <button onClick={handleBookmark}>
+          <button onClick={() => handleBookmark(title)}>
             <img
               className="w-8 h-8"
               src="./src/assets/bookmark-white.png"
@@ -30,7 +30,7 @@ const Blog = ({ blog, handleBookmark }) => {
           </button>
         </div>
       </div>
-      <h1>{title}</h1>
+      <h1 className="text-3xl font-bold">{title}</h1>
       <div className="flex justify-start gap-2">
         {hashtags.map((hashtag, idx) => (
           <span key={idx}>#{hashtag}</span>
