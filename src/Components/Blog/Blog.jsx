@@ -1,9 +1,17 @@
 import PropTypes from "prop-types";
-const Blog = ({ blog }) => {
-  const { cover, title, author, author_img, posted_date, reading_time } = blog;
+const Blog = ({ blog, handleBookmark }) => {
+  const {
+    cover,
+    title,
+    author,
+    author_img,
+    posted_date,
+    hashtags,
+    reading_time,
+  } = blog;
   return (
-    <div className="w-full h-[400px] mb-32 space-y-3">
-      <img className="w-full h-full rounded-md" src={cover}></img>
+    <div className="w-full  mb-16 space-y-3">
+      <img className="w-full h-[400px] rounded-md" src={cover}></img>
       <div className="flex justify-between">
         <div className="flex justify-center gap-5">
           <img className="w-14 h-14 rounded-full" src={author_img}></img>
@@ -14,7 +22,7 @@ const Blog = ({ blog }) => {
         </div>
         <div className="flex justify-center gap-2 items-center">
           <span>Reading Time :{reading_time}</span>
-          <button>
+          <button onClick={handleBookmark}>
             <img
               className="w-8 h-8"
               src="./src/assets/bookmark-white.png"
@@ -23,10 +31,19 @@ const Blog = ({ blog }) => {
         </div>
       </div>
       <h1>{title}</h1>
+      <div className="flex justify-start gap-2">
+        {hashtags.map((hashtag, idx) => (
+          <span key={idx}>#{hashtag}</span>
+        ))}
+      </div>
+      <div>
+        <button className="underline text-blue-700">Mark as read</button>
+      </div>
     </div>
   );
 };
 Blog.propTypes = {
   blog: PropTypes.object.isRequired,
+  handleBookmark: PropTypes.func.isRequired,
 };
 export default Blog;
