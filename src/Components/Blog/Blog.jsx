@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-const Blog = ({ blog, handleBookmark }) => {
+const Blog = ({ blog, handleBookmark, handleMarkAsRead }) => {
   const {
     cover,
     title,
@@ -11,7 +11,7 @@ const Blog = ({ blog, handleBookmark }) => {
   } = blog;
   return (
     <div className="w-full  mb-16 space-y-3">
-      <img className="w-full h-[400px] rounded-md" src={cover}></img>
+      <img className="w-full h-[300px] rounded-md" src={cover}></img>
       <div className="flex justify-between">
         <div className="flex justify-center gap-5">
           <img className="w-14 h-14 rounded-full" src={author_img}></img>
@@ -37,7 +37,12 @@ const Blog = ({ blog, handleBookmark }) => {
         ))}
       </div>
       <div>
-        <button className="underline text-blue-700">Mark as read</button>
+        <button
+          onClick={() => handleMarkAsRead(reading_time)}
+          className="underline text-blue-700"
+        >
+          Mark as read
+        </button>
       </div>
     </div>
   );
@@ -45,5 +50,6 @@ const Blog = ({ blog, handleBookmark }) => {
 Blog.propTypes = {
   blog: PropTypes.object.isRequired,
   handleBookmark: PropTypes.func.isRequired,
+  handleMarkAsRead: PropTypes.func.isRequired,
 };
 export default Blog;
