@@ -23,7 +23,7 @@ const Blog = ({ blog, handleBookmark, handleMarkAsRead }) => {
         </div>
         <div className="flex justify-center gap-2 items-center text-gray-500">
           <span>Reading Time :{reading_time}</span>
-          <button onClick={() => handleBookmark(title)}>
+          <button onClick={() => handleBookmark(blog)}>
             <img className="w-8 h-8" src="logos/bookmark-white.png"></img>
           </button>
         </div>

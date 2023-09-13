@@ -7,8 +7,7 @@ import Bookmarks from "./Components/Bookmarks/Bookmarks";
 function App() {
   const [bookmarks, setBookmarks] = useState([]);
   const [readTime, setReadTime] = useState(0);
-  console.log(bookmarks);
-  const handleBookmark = (bookmark) => setBookmarks([...bookmarks, bookmark]);
+  const handleBookmark = (blog) => setBookmarks([...bookmarks, blog]);
   const handleMarkAsRead = (id, time) => {
     setReadTime(readTime + time);
     const newBookmarks = bookmarks.filter((bookmark) => bookmark.id !== id);
