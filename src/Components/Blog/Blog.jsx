@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 const Blog = ({ blog, handleBookmark, handleMarkAsRead }) => {
   const {
+    id,
     cover,
     title,
     author,
@@ -23,10 +24,7 @@ const Blog = ({ blog, handleBookmark, handleMarkAsRead }) => {
         <div className="flex justify-center gap-2 items-center text-gray-500">
           <span>Reading Time :{reading_time}</span>
           <button onClick={() => handleBookmark(title)}>
-            <img
-              className="w-8 h-8"
-              src="./src/assets/bookmark-white.png"
-            ></img>
+            <img className="w-8 h-8" src="logos/bookmark-white.png"></img>
           </button>
         </div>
       </div>
@@ -38,7 +36,7 @@ const Blog = ({ blog, handleBookmark, handleMarkAsRead }) => {
       </div>
       <div>
         <button
-          onClick={() => handleMarkAsRead(reading_time)}
+          onClick={() => handleMarkAsRead(id, reading_time)}
           className="underline text-blue-700 font-bold"
         >
           Mark as read
